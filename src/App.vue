@@ -19,13 +19,11 @@ export default {
     fetchMovies() {
       store.isLoading = true;
       let url = this.uriToprated;
-
       // if (this.term) url += `?eq[type1]=${this.term}`;
-
       axios.get(url)
         .then(res => {
           console.log(res);
-          store.movies = res.data.result;
+          store.movies = res.data;
         }).catch(error => {
           console.error(error);
           store.movies = [];
