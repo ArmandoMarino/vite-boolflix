@@ -16,8 +16,8 @@ export default {
     <section id="movies">
         <div v-if="store.isLoading" class="text-center">Loading...</div>
         <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-            <movie-card v-for="pokemon in store.movies" :key="pokemon.id" :number="pokemon.number" :name="pokemon.name"
-                :image="pokemon.imageUrl" :type="pokemon.type1"></movie-card>
+            <movie-card v-for="movie in store.movies" :key="movie.id" :number="movie.number" :name="movie.name"
+                :image="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" :type="movie.type1"></movie-card>
         </div>
     </section>
 

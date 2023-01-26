@@ -14,9 +14,9 @@ export default {
     <div class="col movie-card text-center">
         <div class=" interior-card p-3">
             <img class="img-fluid mb-3" :src="image" :alt="name">
-            <p>#{{ number }}</p>
+            <!-- <p>#{{ number }}</p>
             <p><strong>{{ name }} </strong> </p>
-            <p>{{ type }}</p>
+            <p>{{ type }}</p> -->
         </div>
 
     </div>
