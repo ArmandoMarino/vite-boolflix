@@ -17,6 +17,7 @@ export default {
 <style lang="scss" scoped>
 main {
     height: 100vh;
+    overflow-y: auto;
     background-color: #555555;
 }
 </style>
