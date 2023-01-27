@@ -37,10 +37,10 @@ export default {
       axios.get(url)
         .then(res => {
           console.log(res);
-          store.movies = res.data.results;
+          store[collection] = res.data.results;
         }).catch(error => {
           console.error(error);
-          store.movies = [];
+          store[collection] = [];
         }).then(() => {
           store.isLoading = false;
         })
