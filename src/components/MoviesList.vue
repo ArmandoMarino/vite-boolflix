@@ -26,7 +26,7 @@ export default {
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                 <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.original_title"
                     :image="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
-                    :type="movie.type1"></movie-card>
+                    :language="movie.original_language" :vote="movie.vote_average"></movie-card>
             </div>
         </div>
 

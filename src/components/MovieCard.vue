@@ -4,6 +4,9 @@ export default {
     props: {
         id: Number,
         title: String,
+        originalTitle: String,
+        language: String,
+        vote: String,
         image: String,
         flagImage: String
     },
@@ -17,8 +20,10 @@ export default {
             <!-- OVERLAY ON CARD -->
             <div class="card__overlay">
                 <div class="overlay__text">
-                    <h3>ciao</h3>
-                    <p>ciao2</p>
+                    <h3>{{ title }}</h3>
+                    <p>{{ originalTitle }}</p>
+                    <p>{{ language }}</p>
+                    <p>{{ vote }}</p>
                 </div>
             </div>
         </div>
@@ -67,7 +72,7 @@ export default {
         }
 
         .card__overlay:hover {
-            opacity: 1;
+            opacity: 0.9;
         }
     }
 
