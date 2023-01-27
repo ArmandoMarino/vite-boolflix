@@ -18,24 +18,22 @@ export default {
     }
   },
   methods: {
-    /*   fetchTopRated() {
-        store.isLoading = true;
-        let url = this.uriToprated;
-        // if (this.term) url += `?eq[type1]=${this.term}`;
-        axios.get(url)
-          .then(res => {
-            console.log(res);
-            store.movies = res.data.results;
-          }).catch(error => {
-            console.error(error);
-            store.movies = [];
-          }).then(() => {
-            store.isLoading = false;
-          })
-      }, */
-    fetchMovies() {
+    onSearchedMovie(selected) {
+      this.term = selected;
+      this.fetchApi()
+    },
+    searchProductions() {
+      if (!this.term) {
+        store.movies = [];
+        store.series = [];
+        return;
+      }
+
+      this.fetchApi('search/movie', 'movies');
+    },
+    fetchApi(endpoint, collection) {
       store.isLoading = true;
-      let url = `${this.baseUri}/search/movie?api_key=${this.apiKey}&query=${this.term}`
+      let url = `${this.baseUri}/${endpoint}?api_key=${this.apiKey}&query=${this.term}`
       axios.get(url)
         .then(res => {
           console.log(res);
@@ -47,10 +45,7 @@ export default {
           store.isLoading = false;
         })
     },
-    onSearchedMovie(selected) {
-      this.term = selected;
-      this.fetchMovies()
-    }
+
   },
   /*  created() {
      this.fetchTopRated();

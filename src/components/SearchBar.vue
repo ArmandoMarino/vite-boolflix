@@ -8,7 +8,8 @@ export default {
     },
     props: {
         // movies: Array,
-        placeholder: String
+        placeholder: String,
+        buttonLabel: String
     },
     emits: ['term-change', 'form-submit']
 };
