@@ -12,8 +12,8 @@ export default {
 
 <template>
     <div class="col movie-card text-center">
-        <div class=" interior-card p-3">
-            <img class="img-fluid mb-3" :src="image" :alt="title">
+        <div class=" interior-card">
+            <img class="img-fluid" :src="image" :alt="title">
             <!-- <p>#{{ number }}</p>
             <p><strong>{{ name }} </strong> </p>
             <p>{{ type }}</p> -->
@@ -30,11 +30,6 @@ export default {
 
         p {
             font-style: italic;
-        }
-
-        img {
-            width: 200px;
-            height: 200px;
         }
     }
 }
