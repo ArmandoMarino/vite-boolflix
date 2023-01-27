@@ -8,6 +8,12 @@ export default {
     },
     data() {
         return { store }
+    },
+    computed: {
+        hasFlag() {
+            const flags = ['it', 'en'];
+            // return flags.includes(this.store.lingua)
+        }
     }
 };
 </script>
@@ -18,7 +24,7 @@ export default {
             <h1>Movies</h1>
             <div v-if="store.isLoading" class="text-center">Loading...</div>
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                <movie-card v-for="movie in store.movies" :key="movie.id" :number="movie.number" :name="movie.name"
+                <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.original_title"
                     :image="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
                     :type="movie.type1"></movie-card>
             </div>
@@ -29,7 +35,7 @@ export default {
             <h1>TV Series</h1>
             <div v-if="store.isLoading" class="text-center">Loading...</div>
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                <movie-card v-for="serie in store.series" :key="serie.id" :number="serie.number" :name="serie.name"
+                <movie-card v-for="serie in store.series" :key="serie.id" :id="serie.id" :title="serie.name"
                     :image="`https://image.tmdb.org/t/p/original/${serie.poster_path}`"></movie-card>
             </div>
         </div>
