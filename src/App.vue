@@ -20,7 +20,8 @@ export default {
   methods: {
     onSearchedMovie(selected) {
       this.term = selected;
-      this.fetchApi()
+      this.fetchApi('search/movie', 'movies'),
+        this.fetchApi('search/tv', 'series')
     },
     searchProductions() {
       if (!this.term) {
