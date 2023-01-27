@@ -31,8 +31,8 @@ export default {
           store.isLoading = false;
         })
     },
-    onSelectedChange(selected) {
-      // this.typeFilter = selected;
+    onSearchedMovie(selected) {
+      this.term = selected;
       this.fetchMovies()
     }
   },
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <app-header></app-header>
+  <app-header @term-change="onSearchedMovie" :pokemontypes="pokemontypes"></app-header>
   <app-main></app-main>
 </template>
 

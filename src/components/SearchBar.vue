@@ -10,11 +10,6 @@ export default {
         // movies: Array,
         placeholder: String
     },
-    methods: {
-        onTermChange(selected) {
-            this.$emit('term-change', selected);
-        }
-    },
     emits: ['term-change', 'form-submit']
 };
 

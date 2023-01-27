@@ -5,13 +5,18 @@ export default {
     name: 'AppHeader',
     components: {
         SearchBar
-    }
+    },
+    methods: {
+        onTermChange(term) {
+            this.$emit('term-change', term);
+        }
+    },
 }
 </script>
 
 <template>
     <header>
-        <search-bar></search-bar>
+        <search-bar @term-change="onTermChange"></search-bar>
     </header>
 </template>
 
