@@ -13,6 +13,13 @@ export default {
         hasFlag() {
             const flags = ['it', 'en'];
             // return flags.includes(this.store.lingua)
+        },
+    },
+    methods: {
+        voteTrasform() {
+            let star = store[movie.vote_average]
+            console.log(star)
+            return
         }
     }
 };
@@ -24,9 +31,11 @@ export default {
             <h1>Movies</h1>
             <div v-if="store.isLoading" class="text-center">Loading...</div>
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.original_title"
+                <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.title"
+                    :originalTitle="movie.original_title"
                     :image="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
-                    :language="movie.original_language" :vote="movie.vote_average"></movie-card>
+                    :language="movie.original_language" :vote="Math.floor(movie.vote_average)">
+                </movie-card>
             </div>
         </div>
 

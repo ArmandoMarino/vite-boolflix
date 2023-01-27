@@ -6,7 +6,7 @@ export default {
         title: String,
         originalTitle: String,
         language: String,
-        vote: String,
+        vote: Number,
         image: String,
         flagImage: String
     },
@@ -58,7 +58,7 @@ export default {
 
             .overlay__text {
                 color: white;
-                font-size: 20px;
+                font-size: 15px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -66,6 +66,10 @@ export default {
                 -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
                 text-align: center;
+
+                h3 {
+                    font-size: 20px;
+                }
             }
 
 

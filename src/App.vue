@@ -32,6 +32,7 @@ export default {
 
       this.fetchApi('search/movie', 'movies');
     },
+    // NUTRO API call endpoint and collection
     fetchApi(endpoint, collection) {
       store.isLoading = true;
       let url = `${this.baseUri}/${endpoint}?api_key=${this.apiKey}&query=${this.term}`
@@ -46,11 +47,30 @@ export default {
           store.isLoading = false;
         })
     },
+    fetchTopRated() {
+
+      store.isLoading = true;
+      let url = this.uriToprated;
+      axios.get(url)
+        .then(res => {
+          console.log(res);
+          store.movies = res.data.results;
+        }).catch(error => {
+          console.error(error);
+          store.movies = [];
+        }).then(() => {
+          store.isLoading = false;
+        })
+
+    },
+
 
   },
-  /*  created() {
-     this.fetchTopRated();
-   } */
+
+  // TODO C'e' qualcosa che non va quando term va a null
+  created() {
+    this.fetchTopRated();
+  }
 }
 </script>
 
