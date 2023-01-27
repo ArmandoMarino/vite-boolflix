@@ -11,6 +11,8 @@ export default {
             this.$emit('term-change', term);
         }
     },
+    emits: ['term-change']
+
 }
 </script>
 
