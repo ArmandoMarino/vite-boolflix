@@ -14,9 +14,13 @@ export default {
     <div class="col movie-card text-center">
         <div class=" interior-card">
             <img class="img-fluid" :src="image" :alt="title">
-            <!-- <p>#{{ number }}</p>
-            <p><strong>{{ name }} </strong> </p>
-            <p>{{ type }}</p> -->
+            <!-- OVERLAY ON CARD -->
+            <div class="card__overlay">
+                <div class="overlay__text">
+                    <h3>ciao</h3>
+                    <p>ciao2</p>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -27,10 +31,48 @@ export default {
     .interior-card {
         background-color: white;
         border-radius: 20px;
+        position: relative;
+        transition: all .5s ease-in;
+
 
         p {
             font-style: italic;
         }
+
+        .card__overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #393839;
+
+            .overlay__text {
+                color: white;
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+
+        }
+
+        .card__overlay:hover {
+            opacity: 1;
+        }
     }
+
+
+
+
 }
 </style>
