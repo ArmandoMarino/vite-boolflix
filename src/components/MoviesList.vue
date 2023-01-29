@@ -9,12 +9,6 @@ export default {
     data() {
         return { store }
     },
-    computed: {
-        hasFlag() {
-            const flags = ['it', 'en'];
-            // return flags.includes(this.store.lingua)
-        },
-    },
     methods: {
         voteTrasform() {
             let star = store[movie.vote_average]
@@ -57,5 +51,13 @@ export default {
 <style lang="scss" scoped>
 #productions {
     border-radius: 20px;
+
+    h1 {
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 2px;
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+        color: white;
+    }
 }
 </style>

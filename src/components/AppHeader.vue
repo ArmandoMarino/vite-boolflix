@@ -18,13 +18,24 @@ export default {
 
 <template>
     <header>
+        <h1>BOOLFLIX</h1>
         <search-bar @term-change="onTermChange"></search-bar>
     </header>
 </template>
 
 <style lang="scss" scoped>
 header {
-    height: 200px;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
     background-color: black;
+
+    h1 {
+        color: red;
+        font-size: 60px;
+        font-family: 'Bebas Neue', cursive;
+    }
 }
 </style>

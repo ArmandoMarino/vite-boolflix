@@ -10,6 +10,16 @@ export default {
         image: String,
         flagImage: String
     },
+    computed: {
+        hasFlag() {
+            const flags = ['it', 'en'];
+            return flags.includes(this.language)
+        },
+        flagSrc() {
+            const url = new URL(`../assets/img/${this.language}.png`, import.meta.url);
+            return url.href;
+        }
+    },
 };
 </script>
 
@@ -22,7 +32,10 @@ export default {
                 <div class="overlay__text">
                     <h3>{{ title }}</h3>
                     <p>{{ originalTitle }}</p>
-                    <p>{{ language }}</p>
+                    <div class="wrapper-flag p-3">
+                        <img class="img-fluid" v-if="hasFlag" :src="flagSrc" :alt="originalTitle">
+                        <p v-else>{{ language }}</p>
+                    </div>
                     <p>{{ vote }}</p>
                 </div>
             </div>
@@ -69,6 +82,12 @@ export default {
 
                 h3 {
                     font-size: 20px;
+                }
+
+                .wrapper-flag {
+                    img {
+                        width: 50px;
+                    }
                 }
             }
 
