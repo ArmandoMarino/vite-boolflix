@@ -24,7 +24,7 @@ export default {
         <div id="movies">
             <h1>Movies</h1>
             <div v-if="store.isLoading" class="text-center">Loading...</div>
-            <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div v-else class="row m-3 row-cols-3 row-cols-lg-5 g-2 g-lg-3">
                 <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.title"
                     :originalTitle="movie.original_title"
                     :image="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :language="movie.original_language"

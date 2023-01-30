@@ -30,6 +30,7 @@ export default {
     fetchApi(endpoint, collection, query) {
       store.isLoading = true;
       let url = `${this.baseUri}/${endpoint}?api_key=${this.apiKey}`
+      // QUI GESTIAMO LA CHIAMATA API DOVE LA QUERY NON E' RICHIESTA
       if (query) url += `&query=${query}`
       axios.get(url)
         .then(res => {
