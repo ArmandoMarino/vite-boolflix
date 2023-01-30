@@ -37,9 +37,10 @@ export default {
         <div id="series">
             <h1>TV Series</h1>
             <div v-if="store.isLoading" class="text-center">Loading...</div>
-            <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div v-else class="row m-3 row-cols-3 row-cols-lg-5 g-2 g-lg-3">
                 <movie-card v-for="serie in store.series" :key="serie.id" :id="serie.id" :title="serie.name"
-                    :image="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`"></movie-card>
+                    :originalTitle="serie.original_name" :image="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`"
+                    :language="serie.original_language" :average_vote="serie.vote_average"></movie-card>
             </div>
         </div>
 
