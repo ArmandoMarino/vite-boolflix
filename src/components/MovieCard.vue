@@ -75,12 +75,10 @@ export default {
 
     .interior-card {
         background-color: white;
-        border-radius: 20px;
         position: relative;
         transition: all .5s ease-in;
 
         .img-production {
-            border-radius: 20px;
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -92,7 +90,6 @@ export default {
         }
 
         .card__overlay {
-            border-radius: 20px;
             position: absolute;
             top: 0;
             bottom: 0;
