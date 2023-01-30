@@ -27,11 +27,11 @@ export default {
 </script>
 
 <template>
-    <div class="col movie-card text-center">
+    <div class="col movie-card text-center bounce my-4">
         <div class=" interior-card">
             <img class="img-fluid" :src="image" :alt="title">
             <!-- OVERLAY ON CARD -->
-            <div class="card__overlay bounce">
+            <div class="card__overlay">
                 <div class="overlay__text">
                     <h3>{{ title }}</h3>
                     <p>{{ originalTitle }}</p>
@@ -51,8 +51,23 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@keyframes bounce {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
 .movie-card {
     cursor: pointer;
+    animation-duration: 100s;
 
     .interior-card {
         background-color: white;
@@ -115,5 +130,10 @@ export default {
             opacity: 0.9;
         }
     }
+}
+
+.bounce:hover {
+    animation-name: bounce;
+    animation-timing-function: ease;
 }
 </style>
