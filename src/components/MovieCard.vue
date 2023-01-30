@@ -35,7 +35,7 @@ export default {
                 <div class="overlay__text">
                     <h3>{{ title }}</h3>
                     <p>{{ originalTitle }}</p>
-                    <div class="wrapper-flag p-3">
+                    <div class="wrapper-flag p-1">
                         <img class="img-fluid" v-if="hasFlag" :src="flagSrc" :alt="originalTitle">
                         <p v-else>{{ language }}</p>
                     </div>
@@ -51,6 +51,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+// ANIMAZIONE BOUNCE
 @keyframes bounce {
     0% {
         transform: translateY(-20px);
@@ -65,6 +66,7 @@ export default {
     }
 }
 
+// MOVIE CARD
 .movie-card {
     cursor: pointer;
     animation-duration: 100s;
@@ -115,6 +117,11 @@ export default {
 
                 h3 {
                     font-size: 15px;
+                    margin: 0;
+                }
+
+                p {
+                    margin: 0;
                 }
 
                 .wrapper-flag {
