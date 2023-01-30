@@ -18,6 +18,9 @@ export default {
         flagSrc() {
             const url = new URL(`../assets/img/${this.language}.png`, import.meta.url);
             return url.href;
+        },
+        voteCalculate() {
+            return Math.ceil(this.vote / 2)
         }
     },
 };
@@ -37,6 +40,9 @@ export default {
                         <p v-else>{{ language }}</p>
                     </div>
                     <p>{{ vote }}</p>
+                    <ul>
+                        <li v-for="i in 5"><i class="fa-regular fa-star"></i></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -88,6 +94,15 @@ export default {
                     img {
                         width: 50px;
                     }
+                }
+
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    padding: 0;
                 }
             }
 

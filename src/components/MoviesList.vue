@@ -15,7 +15,7 @@ export default {
             console.log(star)
             return
         }
-    }
+    },
 };
 </script>
 
@@ -27,8 +27,8 @@ export default {
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                 <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.title"
                     :originalTitle="movie.original_title"
-                    :image="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
-                    :language="movie.original_language" :vote="Math.floor(movie.vote_average)">
+                    :image="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :language="movie.original_language"
+                    :vote="movie.vote_average">
                 </movie-card>
             </div>
         </div>
@@ -39,7 +39,7 @@ export default {
             <div v-if="store.isLoading" class="text-center">Loading...</div>
             <div v-else class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                 <movie-card v-for="serie in store.series" :key="serie.id" :id="serie.id" :title="serie.name"
-                    :image="`https://image.tmdb.org/t/p/original/${serie.poster_path}`"></movie-card>
+                    :image="`https://image.tmdb.org/t/p/w342/${serie.poster_path}`"></movie-card>
             </div>
         </div>
 
