@@ -29,7 +29,7 @@ export default {
 <template>
     <div class="col movie-card text-center bounce my-4">
         <div class=" interior-card">
-            <img class="img-fluid" :src="image" :alt="title">
+            <img class="img-fluid img-production" :src="image" :alt="title">
             <!-- OVERLAY ON CARD -->
             <div class="card__overlay">
                 <div class="overlay__text">
@@ -68,6 +68,8 @@ export default {
 .movie-card {
     cursor: pointer;
     animation-duration: 100s;
+    height: 200px;
+
 
     .interior-card {
         background-color: white;
@@ -75,18 +77,26 @@ export default {
         position: relative;
         transition: all .5s ease-in;
 
+        .img-production {
+            border-radius: 20px;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+        }
 
         p {
             font-style: italic;
         }
 
         .card__overlay {
+            border-radius: 20px;
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 100%;
+            height: 200px;
             width: 100%;
             opacity: 0;
             transition: .5s ease;
