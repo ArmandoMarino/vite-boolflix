@@ -39,9 +39,9 @@ export default {
                         <img class="img-fluid" v-if="hasFlag" :src="flagSrc" :alt="originalTitle">
                         <p v-else>{{ language }}</p>
                     </div>
-                    <p>{{ vote }}</p>
+                    <!-- <p>{{ vote }}</p> -->
 
-                    <i v-for="i in 5" class="fa-regular fa-star"></i>
+                    <i v-for="i in 5" :class="i <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
 
                 </div>
             </div>
