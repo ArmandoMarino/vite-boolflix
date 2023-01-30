@@ -31,7 +31,7 @@ export default {
         <div class=" interior-card">
             <img class="img-fluid" :src="image" :alt="title">
             <!-- OVERLAY ON CARD -->
-            <div class="card__overlay">
+            <div class="card__overlay bounce">
                 <div class="overlay__text">
                     <h3>{{ title }}</h3>
                     <p>{{ originalTitle }}</p>
@@ -52,6 +52,8 @@ export default {
 
 <style lang="scss" scoped>
 .movie-card {
+    cursor: pointer;
+
     .interior-card {
         background-color: white;
         border-radius: 20px;
@@ -87,7 +89,7 @@ export default {
                 text-align: center;
 
                 h3 {
-                    font-size: 20px;
+                    font-size: 15px;
                 }
 
                 .wrapper-flag {
@@ -113,9 +115,5 @@ export default {
             opacity: 0.9;
         }
     }
-
-
-
-
 }
 </style>
