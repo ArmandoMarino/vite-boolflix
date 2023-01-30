@@ -34,10 +34,10 @@ export default {
             <div class="card__overlay">
                 <div class="overlay__text">
                     <h3>{{ title }}</h3>
-                    <p>{{ originalTitle }}</p>
+                    <p class="p-2">{{ originalTitle }}</p>
                     <div class="wrapper-flag p-1">
-                        <img class="img-fluid" v-if="hasFlag" :src="flagSrc" :alt="originalTitle">
-                        <p v-else>{{ language }}</p>
+                        <img class="img-fluid p-2" v-if="hasFlag" :src="flagSrc" :alt="originalTitle">
+                        <p class="p-2" v-else>{{ language }}</p>
                     </div>
                     <!-- <p>{{ vote }}</p> -->
 
