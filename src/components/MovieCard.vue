@@ -114,6 +114,7 @@ export default {
                 -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
                 text-align: center;
+                width: 100%;
 
                 h3 {
                     font-size: 15px;
