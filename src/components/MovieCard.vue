@@ -6,7 +6,7 @@ export default {
         title: String,
         originalTitle: String,
         language: String,
-        vote: Number,
+        average_vote: Number,
         image: String,
         flagImage: String
     },
@@ -19,8 +19,8 @@ export default {
             const url = new URL(`../assets/img/${this.language}.png`, import.meta.url);
             return url.href;
         },
-        voteCalculate() {
-            return Math.ceil(this.vote / 2)
+        vote() {
+            return Math.ceil(this.average_vote / 2)
         }
     },
 };
@@ -40,9 +40,9 @@ export default {
                         <p v-else>{{ language }}</p>
                     </div>
                     <p>{{ vote }}</p>
-                    <ul>
-                        <li v-for="i in 5"><i class="fa-regular fa-star"></i></li>
-                    </ul>
+
+                    <i v-for="i in 5" class="fa-regular fa-star"></i>
+
                 </div>
             </div>
         </div>

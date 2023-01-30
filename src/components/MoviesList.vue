@@ -28,7 +28,7 @@ export default {
                 <movie-card v-for="movie in store.movies" :key="movie.id" :id="movie.id" :title="movie.title"
                     :originalTitle="movie.original_title"
                     :image="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :language="movie.original_language"
-                    :vote="movie.vote_average">
+                    :average_vote="movie.vote_average">
                 </movie-card>
             </div>
         </div>

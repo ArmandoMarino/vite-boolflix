@@ -11,31 +11,26 @@ export default {
   data() {
     return {
       store,
-      term: '',
-      uriToprated: 'https://api.themoviedb.org/3/movie/top_rated?api_key=e310165f0fd59ba5b0959d17155e6c84&',
       baseUri: 'https://api.themoviedb.org/3',
       apiKey: 'e310165f0fd59ba5b0959d17155e6c84',
     }
   },
   methods: {
     onSearchedMovie(selected) {
-      this.term = selected;
-      this.fetchApi('search/movie', 'movies'),
-        this.fetchApi('search/tv', 'series')
-    },
-    searchProductions() {
-      if (!this.term) {
-        store.movies = [];
-        store.series = [];
-        return;
-      }
+      if (selected) {
+        this.fetchApi('search/movie', 'movies', selected),
+          this.fetchApi('search/tv', 'series', selected)
 
-      this.fetchApi('search/movie', 'movies');
+      } else {
+        this.fetchTopRated();
+      }
     },
+
     // NUTRO API call endpoint and collection
-    fetchApi(endpoint, collection) {
+    fetchApi(endpoint, collection, query) {
       store.isLoading = true;
-      let url = `${this.baseUri}/${endpoint}?api_key=${this.apiKey}&query=${this.term}`
+      let url = `${this.baseUri}/${endpoint}?api_key=${this.apiKey}`
+      if (query) url += `&query=${query}`
       axios.get(url)
         .then(res => {
           console.log(res);
@@ -48,26 +43,15 @@ export default {
         })
     },
     fetchTopRated() {
+      this.fetchApi('tv/top_rated', 'series');
+      this.fetchApi('movie/top_rated', 'movies');
+    }
 
-      store.isLoading = true;
-      let url = this.uriToprated;
-      axios.get(url)
-        .then(res => {
-          console.log(res);
-          store.movies = res.data.results;
-        }).catch(error => {
-          console.error(error);
-          store.movies = [];
-        }).then(() => {
-          store.isLoading = false;
-        })
-
-    },
 
 
   },
 
-  // TODO C'e' qualcosa che non va quando term va a null
+  // TODO C'e' qualcosa che non va quando term va a
   created() {
     this.fetchTopRated();
   }
