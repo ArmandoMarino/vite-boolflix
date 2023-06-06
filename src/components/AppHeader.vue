@@ -18,7 +18,7 @@ export default {
 
 <template>
     <header>
-        <h1>BOOLFLIX</h1>
+        <h1><a style="text-decoration: none; color: red;" href="">BOOLFLIX</a></h1>
         <search-bar @term-change="onTermChange"></search-bar>
     </header>
 </template>

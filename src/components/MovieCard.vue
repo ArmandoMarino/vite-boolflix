@@ -41,7 +41,7 @@ export default {
                     </div>
                     <!-- <p>{{ vote }}</p> -->
 
-                    <i v-for="i in 5" :class="i <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
+                    <i v-for="i in 5" :class="i <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star text-warning"></i>
 
                 </div>
             </div>
